@@ -27,9 +27,12 @@ html {
     font-weight: 400;
     font-family: "Source Serif Pro", Baskerville, "Libre Baskerville", serif;
 }
+
 body {
     max-width: 112ch;
+    font-family: "Source Serif Pro", Baskerville, "Libre Baskerville", serif;
 }
+
 @media only screen and (max-width: 64.9ch) {
     html {
         font-size: 18px;
@@ -4041,4 +4044,30 @@ body.bookreviews .tableWrapper#book-reviews-table td:last-of-type {
     .image-wrapper::after {
         filter: invert(90%);
     }
+}
+
+
+a[href$='.pdf' i]::after, a[href$='/pdf' i]::after, a[href$='type=pdf' i]::after, a[href*='.pdf#' i]::after {
+    content: "";
+    display: inline-block;
+    position: static;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    height: 0.75em;
+    width: 0.75em;
+    margin: 0 0 0 2px;
+    background-image: url(/static/img/pdf.svg);
+}
+
+a[href*="wikipedia.org"]::after {
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 0.75em;
+    background-position: right 1px top;
+    width: 0.85em;
+    height: 0.85em;
+    display: inline-block;
+    vertical-align: baseline;
+    opacity: 0.85;
+    background-image: url(/static/img/wp.svg);
 }
